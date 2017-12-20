@@ -1,0 +1,44 @@
+body {
+  background-image:url("../images/background.png");
+  color: #ffd821;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-size:16px;
+  background-repeat: no-repeat;
+  background-color: black;
+  background-size:100% auto;
+}
+
+.add-button{
+  font-family: 'Quicksand', sans-serif;
+  border-radius: 25px;
+  padding:10px;
+  font-size:16px;
+  font-weight:bold;
+}
+
+h1 {
+  font-size:40px;
+font-family: 'Russo One', sans-serif;}
+
+body img {
+  width:50%;
+}
+
+.badge {
+  position:fixed;
+  margin-top:-42px;
+  margin-left:-62px;
+}
+
+.charbox {
+  text-align:left;
+  width:250px;
+  padding:36px;
+  display:none;
+  background-color: white;
+  color: black;
+  margin:auto;
+  margin-top:20px;
+  border-radius: 25px;
+}
