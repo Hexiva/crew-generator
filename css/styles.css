@@ -7,6 +7,7 @@ body {
   background-repeat: no-repeat;
   background-color: black;
   background-size:100% auto;
+  background-attachment: fixed;
 }
 
 .add-button{
@@ -22,23 +23,117 @@ h1 {
 font-family: 'Russo One', sans-serif;}
 
 body img {
-  width:50%;
+  width:22%;
 }
 
 .badge {
-  position:fixed;
+  position:absolute;
   margin-top:-42px;
   margin-left:-62px;
 }
+.badge img {
+  width:55px;
+  height:auto;
+}
+
+
 
 .charbox {
   text-align:left;
   width:250px;
-  padding:36px;
-  display:none;
+  padding: 20px;
   background-color: white;
   color: black;
   margin:auto;
-  margin-top:20px;
   border-radius: 25px;
+  margin-top: -31px;
+}
+
+#row2 {
+  width: 1001px;
+  position: static;
+  margin: auto;
+  margin-bottom: 254px;
+  margin-top: 24px;
+  z-index: -99999;
+}
+
+.left {
+  margin-right:95px;
+}
+
+#row3 {
+  position:static;
+  margin:auto;
+  height: 325px;
+  width: 1001px;
+}
+
+.bracket img {
+  width: 256px;
+}
+
+.bracket {
+  margin-bottom: 20px;
+  margin-top:-10px;
+  display: inline-block;
+  font-size:27px;
+  font-family: 'Russo One', sans-serif;
+}
+
+#row2 .charbox {
+  position:absolute;
+}
+#row3 .charbox {
+  position:absolute;
+}
+
+#science-officer{
+  margin-left:354px;
+}
+
+#security-officer{
+  margin-left:707px;
+}
+
+#engineer {
+  margin-left:354px;
+}
+
+#counselor {
+  margin-left: 707px
+}
+
+#starship {
+  width:176px;
+  position:absolute;
+  margin-left:40px;
+}
+
+#shiplogo {
+  margin-left:149px;
+  margin-top: -44px;
+}
+
+#shiplogo img {
+  width:99px;
+}
+
+#chargen {
+  display:none;
+  margin-bottom: 56px;
+}
+
+.char-button {
+  background-color:#ffd821;
+  margin-left:32px;
+  font-family: 'Quicksand', sans-serif;
+  border-radius: 25px;
+  padding:10px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+#ship-button{
+  margin-left:15px;
 }

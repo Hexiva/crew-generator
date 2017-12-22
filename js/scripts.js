@@ -40,6 +40,13 @@ function rankGen() {
   return rank;
 }
 
+function shipGen() {
+  var shipArray = ["Activity", "Adamant", "Advantage", "Adventure", "Allegiance", "Ambassador","Atlas", "Audacity", "Bravery", "Cavalier","Centurion", "Challenger","Champion","Daedalus", "Defender","Diligence", "Duty","Gallant", "Gladiator", "Glory","Guardian","Eagle", "Eclipse", "Echo", "Eden", "Endeavor", "Escapade","Excalibur","Excellence","Expedition", "Explorer","Fearless","Fidelity","Formidable","Fortitude","Fortune", "Fortitude","Hope","Icarus", "Illustrious", "Implacable", "Integrity","Intrepid", "Loyalty","Nomad", "Nobility","Obdurate", "Obedience", "Onslaught", "Opportunity","Paragon", "Pathfinder","Polaris","Progress", "Providence","Ranger", "Reliance", "Resolute", "Scout","Sentinel","Traveller","Ultimatum", "Undaunted", "United", "Unity", "Universal", "Valor", "Venture", "Wanderer",]
+  var shipNum = Math.floor(Math.random() * shipArray.length);
+  var ship = shipArray[shipNum];
+  return ship;
+}
+
 function skinGen() {
   var skinArray = ["pale", "brown", "dark",]
   var skinNum = Math.floor(Math.random() * skinArray.length);
@@ -334,23 +341,304 @@ $(document).ready(function() {
     species = specGen();
     gender = genderGen();
     rank = rankGen();
-    name = rank + " " + nameGen();
+    name = nameGen();
     age = ageGen();
     pos = posGen();
     pers = persGen();
-    hair = hairGen();
     skin = skinGen();
+    hair = hairGen();
     eye = eyeGen();
-    $("#name").text(name);
-    $("#species").text(species);
-    $("#gender").text(gender);
-    $("#age").text(age);
-    $("#position").text(pos);
-    $("#personality").text(pers);
-    $("#skin").text(skin);
-    $("#hair").text(hair);
-    $("#eye").text(eye);
-    $(".charbox").show();
+    $("#captain .name").text(name);
+    $("#captain .species").text(species);
+    $("#captain .gender").text(gender);
+    $("#captain .age").text(age);
+    $("#captain .position").text(pos);
+    $("#captain .personality").text(pers);
+    $("#captain .skin").text(skin);
+    $("#captain .hair").text(hair);
+    $("#captain .eye").text(eye);
+
+    species = specGen();
+    gender = genderGen();
+    rank = rankGen();
+    name = nameGen();
+    age = ageGen();
+    pos = posGen();
+    pers = persGen();
+    skin = skinGen();
+    hair = hairGen();
+    eye = eyeGen();
+    $("#first-officer .name").text(name);
+    $("#first-officer .species").text(species);
+    $("#first-officer .gender").text(gender);
+    $("#first-officer .age").text(age);
+    $("#first-officer .position").text(pos);
+    $("#first-officer .personality").text(pers);
+    $("#first-officer .skin").text(skin);
+    $("#first-officer .hair").text(hair);
+    $("#first-officer .eye").text(eye);
+
+    species = specGen();
+    gender = genderGen();
+    rank = rankGen();
+    name = nameGen();
+    age = ageGen();
+    pos = posGen();
+    pers = persGen();
+    skin = skinGen();
+    hair = hairGen();
+    eye = eyeGen();
+    $("#science-officer .name").text(name);
+    $("#science-officer .species").text(species);
+    $("#science-officer .gender").text(gender);
+    $("#science-officer .age").text(age);
+    $("#science-officer .position").text(pos);
+    $("#science-officer .personality").text(pers);
+    $("#science-officer .skin").text(skin);
+    $("#science-officer .hair").text(hair);
+    $("#science-officer .eye").text(eye);
+
+    species = specGen();
+    gender = genderGen();
+    rank = rankGen();
+    name = nameGen();
+    age = ageGen();
+    pos = posGen();
+    pers = persGen();
+    skin = skinGen();
+    hair = hairGen();
+    eye = eyeGen();
+    $("#security-officer .name").text(name);
+    $("#security-officer .species").text(species);
+    $("#security-officer .gender").text(gender);
+    $("#security-officer .age").text(age);
+    $("#security-officer .position").text(pos);
+    $("#security-officer .personality").text(pers);
+    $("#security-officer .skin").text(skin);
+    $("#security-officer .hair").text(hair);
+    $("#security-officer .eye").text(eye);
+
+    species = specGen();
+    gender = genderGen();
+    rank = rankGen();
+    name = nameGen();
+    age = ageGen();
+    pos = posGen();
+    pers = persGen();
+    skin = skinGen();
+    hair = hairGen();
+    eye = eyeGen();
+    $("#doctor .name").text(name);
+    $("#doctor .species").text(species);
+    $("#doctor .gender").text(gender);
+    $("#doctor .age").text(age);
+    $("#doctor .position").text(pos);
+    $("#doctor .personality").text(pers);
+    $("#doctor .skin").text(skin);
+    $("#doctor .hair").text(hair);
+    $("#doctor .eye").text(eye);
+
+    species = specGen();
+    gender = genderGen();
+    rank = rankGen();
+    name = nameGen();
+    age = ageGen();
+    pos = posGen();
+    pers = persGen();
+    skin = skinGen();
+    hair = hairGen();
+    eye = eyeGen();
+    $("#engineer .name").text(name);
+    $("#engineer .species").text(species);
+    $("#engineer .gender").text(gender);
+    $("#engineer .age").text(age);
+    $("#engineer .position").text(pos);
+    $("#engineer .personality").text(pers);
+    $("#engineer .skin").text(skin);
+    $("#engineer .hair").text(hair);
+    $("#engineer .eye").text(eye);
+
+    species = specGen();
+    gender = genderGen();
+    rank = rankGen();
+    name = nameGen();
+    age = ageGen();
+    pos = posGen();
+    pers = persGen();
+    skin = skinGen();
+    hair = hairGen();
+    eye = eyeGen();
+    $("#counselor .name").text(name);
+    $("#counselor .species").text(species);
+    $("#counselor .gender").text(gender);
+    $("#counselor .age").text(age);
+    $("#counselor .position").text(pos);
+    $("#counselor .personality").text(pers);
+    $("#counselor .skin").text(skin);
+    $("#counselor .hair").text(hair);
+    $("#counselor .eye").text(eye);
+
+    ship = shipGen();
+    $("#ship").text(ship);
+    $("#chargen").show();
   });
+  $('#captain-button').click(function(){
+    species = specGen();
+    gender = genderGen();
+    rank = rankGen();
+    name = nameGen();
+    age = ageGen();
+    pos = posGen();
+    pers = persGen();
+    skin = skinGen();
+    hair = hairGen();
+    eye = eyeGen();
+    $("#captain .name").text(name);
+    $("#captain .species").text(species);
+    $("#captain .gender").text(gender);
+    $("#captain .age").text(age);
+    $("#captain .position").text(pos);
+    $("#captain .personality").text(pers);
+    $("#captain .skin").text(skin);
+    $("#captain .hair").text(hair);
+    $("#captain .eye").text(eye);
+});
+
+$('#first-button').click(function(){
+  species = specGen();
+  gender = genderGen();
+  rank = rankGen();
+  name = nameGen();
+  age = ageGen();
+  pos = posGen();
+  pers = persGen();
+  skin = skinGen();
+  hair = hairGen();
+  eye = eyeGen();
+  $("#first-officer .name").text(name);
+  $("#first-officer .species").text(species);
+  $("#first-officer .gender").text(gender);
+  $("#first-officer .age").text(age);
+  $("#first-officer .position").text(pos);
+  $("#first-officer .personality").text(pers);
+  $("#first-officer .skin").text(skin);
+  $("#first-officer .hair").text(hair);
+  $("#first-officer .eye").text(eye);
+});
+
+$('#science-button').click(function(){
+  species = specGen();
+  gender = genderGen();
+  rank = rankGen();
+  name = nameGen();
+  age = ageGen();
+  pos = posGen();
+  pers = persGen();
+  skin = skinGen();
+  hair = hairGen();
+  eye = eyeGen();
+  $("#science-officer .name").text(name);
+  $("#science-officer .species").text(species);
+  $("#science-officer .gender").text(gender);
+  $("#science-officer .age").text(age);
+  $("#science-officer .position").text(pos);
+  $("#science-officer .personality").text(pers);
+  $("#science-officer .skin").text(skin);
+  $("#science-officer .hair").text(hair);
+  $("#science-officer .eye").text(eye);
+});
+
+$('#security-button').click(function(){
+  species = specGen();
+  gender = genderGen();
+  rank = rankGen();
+  name = nameGen();
+  age = ageGen();
+  pos = posGen();
+  pers = persGen();
+  skin = skinGen();
+  hair = hairGen();
+  eye = eyeGen();
+  $("#security-officer .name").text(name);
+  $("#security-officer .species").text(species);
+  $("#security-officer .gender").text(gender);
+  $("#security-officer .age").text(age);
+  $("#security-officer .position").text(pos);
+  $("#security-officer .personality").text(pers);
+  $("#security-officer .skin").text(skin);
+  $("#security-officer .hair").text(hair);
+  $("#security-officer .eye").text(eye);
+});
+
+$('#doc-button').click(function(){
+  species = specGen();
+  gender = genderGen();
+  rank = rankGen();
+  name = nameGen();
+  age = ageGen();
+  pos = posGen();
+  pers = persGen();
+  skin = skinGen();
+  hair = hairGen();
+  eye = eyeGen();
+  $("#doctor .name").text(name);
+  $("#doctor .species").text(species);
+  $("#doctor .gender").text(gender);
+  $("#doctor .age").text(age);
+  $("#doctor .position").text(pos);
+  $("#doctor .personality").text(pers);
+  $("#doctor .skin").text(skin);
+  $("#doctor .hair").text(hair);
+  $("#doctor .eye").text(eye);
+});
+
+$('#engineer-button').click(function(){
+  species = specGen();
+  gender = genderGen();
+  rank = rankGen();
+  name = nameGen();
+  age = ageGen();
+  pos = posGen();
+  pers = persGen();
+  skin = skinGen();
+  hair = hairGen();
+  eye = eyeGen();
+  $("#engineer .name").text(name);
+  $("#engineer .species").text(species);
+  $("#engineer .gender").text(gender);
+  $("#engineer .age").text(age);
+  $("#engineer .position").text(pos);
+  $("#engineer .personality").text(pers);
+  $("#engineer .skin").text(skin);
+  $("#engineer .hair").text(hair);
+  $("#engineer .eye").text(eye);
+});
+
+$('#counselor-button').click(function(){
+  species = specGen();
+  gender = genderGen();
+  rank = rankGen();
+  name = nameGen();
+  age = ageGen();
+  pos = posGen();
+  pers = persGen();
+  skin = skinGen();
+  hair = hairGen();
+  eye = eyeGen();
+  $("#counselor .name").text(name);
+  $("#counselor .species").text(species);
+  $("#counselor .gender").text(gender);
+  $("#counselor .age").text(age);
+  $("#counselor .position").text(pos);
+  $("#counselor .personality").text(pers);
+  $("#counselor .skin").text(skin);
+  $("#counselor .hair").text(hair);
+  $("#counselor .eye").text(eye);
+});
+
+$('#ship-button').click(function(){
+  ship = shipGen();
+  $("#ship").text(ship);
+});
 
 });

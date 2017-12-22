@@ -5,23 +5,97 @@
     <script type="text/javascript" src="js\jquery-3.2.1.js"></script>
     <script type="text/javascript" src="js\scripts.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Quicksand|Russo+One" rel="stylesheet">
-    <title>Star Trek Character Generator</title>
+    <title>Star Trek Crew Generator</title>
   </head>
   <body>
-    <h1><img src="images/StarTrekLogo.png"> <br>Character Generator</h1>
-    <div class="container">
-      <button type="button" class="add-button">Generate character</button>
-      <div class="charbox">
+    <h1><img src="images/StarTrekLogo.png"><br>Crew Generator</h1>
+<p>  <button type="button" class="add-button">Generate new crew</button></p>
+<div id="chargen">
+<div class="charbox" div id="starship">
+  <div class="badge" id="shiplogo"><img src="images/starshiplogo.png"> </div> <strong>Ship:</strong> USS <span id="ship"></span><br><br>
+  <button type="button" class="char-button" id="ship-button">Generate new ship</button>
+</div>
+      <div class="bracket">Captain<br><img src="images/bracket.png"></div>
+      <div class="charbox" div id="captain">
         <div class="badge"><img src="images/starfleetlogo.png"> </div>
-        <p><strong>Name:</strong> <span id="name"></span></p>
-        <p><strong>Gender:</strong> <span id="gender"></span></p>
-        <p><strong>Age:</strong> <span id="age"></span></p>
-        <p><strong>Position:</strong> <span id="position"></span></p>
-        <p><strong>Species:</strong> <span id="species"></span></p>
-        <p><strong>Personality:</strong> <span id="personality"></span></p>
-        <p><strong>Appearance:</strong> <span id="hair"></span>, <span id="skin"></span> skin, <span id="eye"></span> eyes</p>
-
+        <strong>Name:</strong> Captain <span class="name"></span><br>
+        <strong>Gender:</strong> <span class="gender"></span><br>
+        <strong>Age:</strong> <span class="age"></span><br>
+        <strong>Species:</strong> <span class="species"></span><br>
+        <strong>Personality:</strong> <span class="personality"></span><br>
+        <strong>Appearance:</strong> <span class="hair"></span>, <span class="skin"></span> skin, <span class="eye"></span> eyes<br><br>
+        <button type="button" class="char-button" id="captain-button">Generate new character</button>
+      </div>
+      <div id="row2">
+      <div class="bracket left">First Officer<br><img src="images/bracket.png"></div>
+      <div class="charbox" div id="first-officer">
+        <div class="badge"><img src="images/starfleetlogo.png"> </div>
+        <strong>Name:</strong> Commander <span class="name"></span><br>
+        <strong>Gender:</strong> <span class="gender"></span><br>
+        <strong>Age:</strong> <span class="age"></span><br>
+        <strong>Species:</strong> <span class="species"></span><br>
+        <strong>Personality:</strong> <span class="personality"></span><br>
+        <strong>Appearance:</strong> <span class="hair"></span>, <span class="skin"></span> skin, <span class="eye"></span> eyes<br><br>
+        <button type="button" class="char-button" id="first-button">Generate new character</button>
+      </div>
+      <div class="bracket left">Science Officer<br><img src="images/bracket.png"></div>
+      <div class="charbox" div id="science-officer">
+        <div class="badge"><img src="images/starfleetlogo.png"> </div>
+        <strong>Name:</strong> Lieutenant Commander <span class="name"></span><br>
+        <strong>Gender:</strong> <span class="gender"></span><br>
+        <strong>Age:</strong> <span class="age"></span><br>
+        <strong>Species:</strong> <span class="species"></span><br>
+        <strong>Personality:</strong> <span class="personality"></span><br>
+        <strong>Appearance:</strong> <span class="hair"></span>, <span class="skin"></span> skin, <span class="eye"></span> eyes<br><br>
+        <button type="button" class="char-button" id="science-button">Generate new character</button>
+      </div>
+      <div class="bracket">Security Officer<br><img src="images/bracket.png"></div>
+      <div class="charbox" div id="security-officer">
+        <div class="badge"><img src="images/starfleetlogo.png"> </div>
+        <strong>Name:</strong> Lieutenant Commander <span class="name"></span><br>
+        <strong>Gender:</strong> <span class="gender"></span><br>
+        <strong>Age:</strong> <span class="age"></span><br>
+        <strong>Species:</strong> <span class="species"></span><br>
+        <strong>Personality:</strong> <span class="personality"></span><br>
+        <strong>Appearance:</strong> <span class="hair"></span>, <span class="skin"></span> skin, <span class="eye"></span> eyes<br><br>
+        <button type="button" class="char-button" id="security-button">Generate new character</button>
       </div>
     </div>
+    <div id="row3">
+      <div class="bracket left">Doctor<br><img src="images/bracket.png"></div>
+      <div class="charbox" div id="doctor">
+        <div class="badge"><img src="images/starfleetlogo.png"> </div>
+        <strong>Name:</strong> Dr. <span class="name"></span><br>
+        <strong>Gender:</strong> <span class="gender"></span><br>
+        <strong>Age:</strong> <span class="age"></span><br>
+        <strong>Species:</strong> <span class="species"></span><br>
+        <strong>Personality:</strong> <span class="personality"></span><br>
+        <strong>Appearance:</strong> <span class="hair"></span>, <span class="skin"></span> skin, <span class="eye"></span> eyes<br><br>
+        <button type="button" class="char-button" id="doc-button">Generate new character</button>
+      </div>
+      <div class="bracket left">Engineer<br><img src="images/bracket.png"></div>
+      <div class="charbox" div id="engineer">
+        <div class="badge"><img src="images/starfleetlogo.png"> </div>
+        <strong>Name:</strong> Lieutenant Commander <span class="name"></span><br>
+        <strong>Gender:</strong> <span class="gender"></span><br>
+        <strong>Age:</strong> <span class="age"></span><br>
+        <strong>Species:</strong> <span class="species"></span><br>
+        <strong>Personality:</strong> <span class="personality"></span><br>
+        <strong>Appearance:</strong> <span class="hair"></span>, <span class="skin"></span> skin, <span class="eye"></span> eyes<br><br>
+        <button type="button" class="char-button" id="engineer-button">Generate new character</button>
+      </div>
+      <div class="bracket">Counselor<br><img src="images/bracket.png"></div>
+      <div class="charbox" div id="counselor">
+        <div class="badge"><img src="images/starfleetlogo.png"> </div>
+        <strong>Name:</strong> Counselor <span class="name"></span><br>
+        <strong>Gender:</strong> <span class="gender"></span><br>
+        <strong>Age:</strong> <span class="age"></span><br>
+        <strong>Species:</strong> <span class="species"></span><br>
+        <strong>Personality:</strong> <span class="personality"></span><br>
+        <strong>Appearance:</strong> <span class="hair"></span>, <span class="skin"></span> skin, <span class="eye"></span> eyes<br><br>
+        <button type="button" class="char-button" id="counselor-button">Generate new character</button>
+      </div>
+    </div>
+  </div>
   </body>
 </html>
