@@ -48,15 +48,21 @@ function shipGen() {
 }
 
 function skinGen() {
-  var skinArray = ["pale", "brown", "dark",]
-  var skinNum = Math.floor(Math.random() * skinArray.length);
-  var skin = skinArray[skinNum]
-  return skin;
+  if (species === "Cardassian") {
+    var skin = "grey";
+    return skin;
+  } else {
+    var skinArray = ["pale", "brown", "dark",]
+    var skinNum = Math.floor(Math.random() * skinArray.length);
+    var skin = skinArray[skinNum]
+    return skin;
+}
 }
 
 function eyeGen() {
   if (species === "Betazoid"){
     eye = "black";
+    return eye;
   } else {
     if (skin === "pale") {
       var eyeArray = ["blue", "green", "grey", "brown", "dark brown", "hazel",]
