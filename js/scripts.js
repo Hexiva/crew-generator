@@ -122,6 +122,14 @@ function hairGen(){
   return hair;
 }
 
+function Character(name, gender, age, species, personality) {
+  this.name = name;
+  this.gender = gender;
+  this.age = age;
+  this.species= species;
+  this.personality = personality;
+}
+
 function nameGen(){
   if (species === "Vulcan" && gender === "Female") {
     var syl1Array = ["T'P","T'P","T'P","T'L","T'V","V'L", "T'H","T'Sh", "T'Kl","T'K","T'M",];
@@ -340,10 +348,26 @@ function nameGen(){
 }
 }
 
+function relGen(x, characterArray){
+  var relArray = [];
+  characterArray.forEach(function(character) {
+    if (characterArray[x].name != character.name) {
+      var relationArray = ["is in love with", "looks down on", "hates", "admires", "respects", "is irritated by", "is best friends with", "is a rival to", "used to be in a relationship with", "used to be friends with", "is married to", "is dating"];
+      var relNum = Math.floor(Math.random() * relationArray.length);
+      var relationships = characterArray[x].name + " " + relationArray[relNum] + " " + character.name;
+      relArray.push(relationships);
+    }
+  });
+  var relList = relArray[0] + ". " + relArray[1] + ". " + relArray[2] + ". " + relArray[3] + ". " + relArray[4] + ". " + relArray[5] + ". ";
+  return relList;
+}
 
 $(document).ready(function() {
   $('.add-button').click(function(){
     event.preventDefault();
+
+    var characterArray = [];
+
     species = specGen();
     gender = genderGen();
     rank = rankGen();
@@ -354,6 +378,8 @@ $(document).ready(function() {
     skin = skinGen();
     hair = hairGen();
     eye = eyeGen();
+    var captain = new Character(name, gender, age,species, pers);
+    characterArray.push(captain);
     $("#captain .name").text(name);
     $("#captain .species").text(species);
     $("#captain .gender").text(gender);
@@ -374,6 +400,8 @@ $(document).ready(function() {
     skin = skinGen();
     hair = hairGen();
     eye = eyeGen();
+    var firstOfficer = new Character(name, gender, age,species, pers);
+    characterArray.push(firstOfficer);
     $("#first-officer .name").text(name);
     $("#first-officer .species").text(species);
     $("#first-officer .gender").text(gender);
@@ -394,6 +422,8 @@ $(document).ready(function() {
     skin = skinGen();
     hair = hairGen();
     eye = eyeGen();
+    var scienceOfficer = new Character(name, gender, age,species, pers);
+    characterArray.push(scienceOfficer);
     $("#science-officer .name").text(name);
     $("#science-officer .species").text(species);
     $("#science-officer .gender").text(gender);
@@ -414,6 +444,8 @@ $(document).ready(function() {
     skin = skinGen();
     hair = hairGen();
     eye = eyeGen();
+    var securityOfficer = new Character(name, gender, age,species, pers);
+    characterArray.push(securityOfficer);
     $("#security-officer .name").text(name);
     $("#security-officer .species").text(species);
     $("#security-officer .gender").text(gender);
@@ -434,6 +466,8 @@ $(document).ready(function() {
     skin = skinGen();
     hair = hairGen();
     eye = eyeGen();
+    var doctor = new Character(name, gender, age,species, pers);
+    characterArray.push(doctor);
     $("#doctor .name").text(name);
     $("#doctor .species").text(species);
     $("#doctor .gender").text(gender);
@@ -454,6 +488,8 @@ $(document).ready(function() {
     skin = skinGen();
     hair = hairGen();
     eye = eyeGen();
+    var engineer = new Character(name, gender, age,species, pers);
+    characterArray.push(engineer);
     $("#engineer .name").text(name);
     $("#engineer .species").text(species);
     $("#engineer .gender").text(gender);
@@ -474,6 +510,8 @@ $(document).ready(function() {
     skin = skinGen();
     hair = hairGen();
     eye = eyeGen();
+    var counselor = new Character(name, gender, age,species, pers);
+    characterArray.push(counselor);
     $("#counselor .name").text(name);
     $("#counselor .species").text(species);
     $("#counselor .gender").text(gender);
@@ -486,6 +524,7 @@ $(document).ready(function() {
 
     ship = shipGen();
     $("#ship").text(ship);
+    $("#captain .relationships").text(relGen(0, characterArray));
     $("#chargen").show();
   });
   $('#captain-button').click(function(){
