@@ -97,7 +97,7 @@ function posGen(){
 }
 
 function persGen (){
-  var persArray = ["Brilliant", "Active", "Adaptable", "Agreeable", "Amiable", "Benevolent", "Calm", "Caring", "Challenging", "Charismatic", "Cheerful", "Charming", "Clever", "Compassionate", "Conscientious", "Considerate", "Contemplative", "Courageous", "Courteous", "Creative", "Cultured", "Curious", "Daring", "Debonair", "Dedicated", "Dignified", "Disciplines", "Dramatic", "Dutiful", "Earnest", "Efficient", "Elegant", "Empathetic", "Energetic", "Enthusiastic", "Faithful", "Friendly", "Fun-loving", "Gallant", "Generous", "Gentle", "Good-natured", "Gracious", "Hearty", "Helpful", "Honest", "Honorable", "Humble", "Humorous", "Idealistic", "Imaginative", "Individualistic", "Knowledgeable", "Logical", "Loyal", "Methodical", "Modest", "Neat", "Optimistic", "Orderly", "Passionate","Patient", "Peaceful", "Perceptive", "Perfectionist", "Persuasive", "Playful", "Polished", "Principled", "Protective", "Prudent", "Rational", "Relaxed", "Responsible", "Romantic", "Sage", "Scholarly", "Selfless", "Sensitive", "Sentimental", "Serious", "Shrewd", "Sociable", "Spontaneous", "Steadfast", "Stoic", "Studious", "Suave", "Trusting", "Vivacious", "Wise", "Witty", "Absent-minded", "Ambitious", "Artful", "Breezy", "Businesslike", "Casual", "Competitive", "Confidential", "Crisp", "Determined", "Dry", "Emotional", "Enigmatic", "Formal","Guileless", "Impassive", "Impressionable", "Intense", "Irreverent", "Mellow", "Old-fashioned", "Placid", "Proud", "Quiet", "Reserved", "Restrained", "Retiring", "Sarcastic", "Self-conscious", "Solemn", "Stern", "Strict", "Stubborn",]
+  var persArray = ["Brilliant", "Active", "Adaptable", "Agreeable", "Amiable", "Benevolent", "Calm", "Caring", "Challenging", "Charismatic", "Cheerful", "Charming", "Clever", "Compassionate", "Conscientious", "Considerate", "Contemplative", "Courageous", "Courteous", "Creative", "Cultured", "Curious", "Daring", "Debonair", "Dedicated", "Dignified", "Disciplined", "Dramatic", "Dutiful", "Earnest", "Efficient", "Elegant", "Empathetic", "Energetic", "Enthusiastic", "Faithful", "Friendly", "Fun-loving", "Gallant", "Generous", "Gentle", "Good-natured", "Gracious", "Hearty", "Helpful", "Honest", "Honorable", "Humble", "Humorous", "Idealistic", "Imaginative", "Individualistic", "Knowledgeable", "Logical", "Loyal", "Methodical", "Modest", "Neat", "Optimistic", "Orderly", "Passionate","Patient", "Peaceful", "Perceptive", "Perfectionist", "Persuasive", "Playful", "Polished", "Principled", "Protective", "Prudent", "Rational", "Relaxed", "Responsible", "Romantic", "Sage", "Scholarly", "Selfless", "Sensitive", "Sentimental", "Serious", "Shrewd", "Sociable", "Spontaneous", "Steadfast", "Stoic", "Studious", "Suave", "Trusting", "Vivacious", "Wise", "Witty", "Absent-minded", "Ambitious", "Artful", "Breezy", "Businesslike", "Casual", "Competitive", "Confidential", "Crisp", "Determined", "Dry", "Emotional", "Enigmatic", "Formal","Guileless", "Impassive", "Impressionable", "Intense", "Irreverent", "Mellow", "Old-fashioned", "Placid", "Proud", "Quiet", "Reserved", "Restrained", "Retiring", "Sarcastic", "Self-conscious", "Solemn", "Stern", "Strict", "Stubborn",]
   var persNum = Math.floor(Math.random() * persArray.length);
   var pers = persArray[persNum];
   return pers;
@@ -122,13 +122,114 @@ function hairGen(){
   return hair;
 }
 
-function Character(name, gender, age, species, personality) {
+function Character(name, surname, gender, age, species, personality) {
   this.name = name;
+  this.surname = surname;
   this.gender = gender;
   this.age = age;
   this.species= species;
   this.personality = personality;
 }
+
+function nationGen(){
+  var nationArray = ["England", "Russia", "France","Japan"]
+  var nationNum = Math.floor(Math.random() * nationArray.length);
+  nation = nationArray[nationNum];
+  return nation;
+}
+
+function surNameGen() {
+  if (species==="Human") {
+    if (nation === "England") {
+      var surArray = ["Johnson","Jackson", "Smith", "Tailor","Brown","Anderson", "Clark", "Wright", "Mitchell", "Thomas", "Rodriguez", "Lopez", "Perez", "Williams", "Lewis", "Hill", "Roberts", "Jones", "White", "Lee", "Scott", "Turner", "Harris", "Walker", "Green", "Phillips", "Davis", "Martin", "Hall", "Adams", "Campbell", "Miller", "Thompson", "Allen", "Baker", "Parker", "Wilson", "Garcia", "Young", "Gonzalez", "Evans", "Moore", "Martinez","Hernandez", "Nelson", "Edwards", "Taylor", "Robinson", "King", "Carter", "Collins",];
+      var surNum = Math.floor(Math.random() * surArray.length);
+      var surname = " " + surArray[surNum];
+      return surname;
+    } else if (nation === "Russia") {
+      var surArray = ["Ivanov", "Smirnov", "Kuznetsov","Popov", "Vasiliev", "Petrov", "Sokolov", "Mikhailov", "Fedorov", "Morozov", "Volkov", "Alexeev", "Lebedev", "Semenov", "Egorov", "Pavlov", "Kozlov", "Stepanov", "Nikolaev", "Orlov",];
+      var surNum = Math.floor(Math.random() * surArray.length);
+      if (gender === "Female") {
+        var surname = " " + surArray[surNum] + "a";
+        return surname;
+      } else {
+        var surname = " " + surArray[surNum];
+        return surname;
+      }
+    } else if (nation === "France") {
+      var surArray = ["Martin", "Bernard", "Duboi", "Thomas", "Robert", "Richard", "Petit", "Durand", "Leroy", "Moreau", "Simon", "Laurent", "Michel", "Garcia", "David", "Betrand","Roux", "Vincent", "Fournier", "Morel", "Girard", "Andre", "Lefevre", "Mercier", "Dupont", "Lambert", "Bonnet", "Francois", "Martinez", "Legrand", "Garnier", "Faure", "Rousseau", "Blanc", "Guerin", "Miller", "Henry", "Roussel", "Nicolas","Perrin", "Morin", "Mathieu", "Clement", "Gauthier", "Dumont", "Lopez", "Fontaine", "Chevalier", "Robin", "Masson", "Sanchez", "Gerard", "Nguyen", "Boyer", "Denis", "Lemaire", "Duval", "Gautier", "Roger", "Roche", "Roy", "Noel"];
+      var surNum = Math.floor(Math.random() * surArray.length);
+      var surname = " " + surArray[surNum];
+      return surname;
+    } else if (nation === "Japan") {
+      var surArray = ["Sato", "Suzuki", "Takahashi", "Tanaka", "Watanabe", "Ito", "Yamamoto", "Nakamura", "Kobayashi", "Kato", "Yoshida", "Yamada", "Sasaki", "Yamaguchi", "Saito", "Matsumoto", "Inoue", "Kimura", "Hayashi", "Shimizu", "Yamazaki", "Mori", "Abe", "Ikeda", "Hashimoto", "Yamashita", "Ishikawa", "Nakajima", "Maed", "Fujita", "Ogawa", "Goto", "Okada", "Hasegawa", "Murakami", "Kondo", "Ishii", "Sakamoto", "Endo", "Aoki", "Fujii", "Nishimura", "Fukuda", "Ota", "Miura", "Fujiwara", "Okamoto", "Matsuda", "Nakagawa", "Nakano", "Harada", "Ono", "Tamura", "Takeuchi", "Kaneko", "Wada", "Nakayama", "Ishida", "Ueda", "Morita", "Hara", "Shibata", "Sakai", "Kudo", "Yokoyama", "Miyazaki", "Miyamoto", "Uchida", "Takagi", "Ando", "Taniguchi", "Ohno", "Maruyama", "Imai", "Takada", "Fujimoto", "Takeda"];
+      var surNum = Math.floor(Math.random() * surArray.length);
+      var surname = " " + surArray[surNum];
+      return surname;
+    }
+  } else if (species === "Klingon") {
+    var syl1Array = ["W", "R", "K'R", "K'T", "Gow", "Mart", "M", "G", "Kr","K", "Br", "G'tr", "Kur", "V", "Mol", "Mow", "T'Gr","Tor","Dur","T","Gr","Kat",];
+    var syl1Num = Math.floor(Math.random() * syl1Array.length);
+    var syl2Array = ["orf", "org", "uge","oth", "ok",  "ot","ex","ulhe", "aang", "az","agh", "ogh", "oqh","oggra", "or", "orkka", "ath","al", "as", "afk"];
+    var syl2Num = Math.floor(Math.random() * syl2Array.length);
+    if (gender === "Male") {
+      var surname = ", son of " + syl1Array[syl1Num] + syl2Array[syl2Num];
+      return surname;
+    } else if (gender === "Female") {
+      var surname = ", daughter of " + syl1Array[syl1Num] + syl2Array[syl2Num];
+      return surname;
+    } else if (gender === "Nonbinary") {
+      var surname = ", child of " + syl1Array[syl1Num] + syl2Array[syl2Num];
+      return surname;
+    }
+  } else if (species === "Betazoid"){
+    if (gender === "Female") {
+      var sur1Array = ["T","D","F","G","K","Pr","Th","Tr","V", "Dy","L", "X",]
+      var sur1Num = Math.floor(Math.random() * sur1Array.length);
+      var sur2Array = ["el", "eo", "an", "ort", "av", "if","on", "ir","ex"]
+      var sur2Num = Math.floor(Math.random() * sur2Array.length);
+      var surname = " " + sur1Array[sur1Num] + sur2Array[sur2Num];
+      return surname;
+    } else if (gender === "Male") {
+      var sur1Array = ["T","D","F","G","K","Pr","Th","Tr","V", "Dy","L", "X",]
+      var sur1Num = Math.floor(Math.random() * sur1Array.length);
+      var sur2Array = ["el", "eo", "an", "ort", "av", "if","on", "ir","ex"]
+      var sur2Num = Math.floor(Math.random() * sur2Array.length);
+      var surname = " " + sur1Array[sur1Num] + sur2Array[sur2Num];
+      return surname;
+    } else if (gender === "Nonbinary") {
+      var sur1Array = ["T","D","F","G","K","Pr","Th","Tr","V", "Dy","L", "X",]
+      var sur1Num = Math.floor(Math.random() * sur1Array.length);
+      var sur2Array = ["el", "eo", "an", "ort", "av", "if","on", "ir","ex"]
+      var sur2Num = Math.floor(Math.random() * sur2Array.length);
+      var surname = " " + sur1Array[sur1Num] + sur2Array[sur2Num];
+      return surname;
+    }
+  } else if (species === "Joined Trill") {
+    var sur1Array = ["B","Br", "Cl", "C", "D","F","G", "Gr", "K", "Ker", "Kal","Lex","M","N","Od","Per", ]
+    var sur1Num = Math.floor(Math.random() * sur1Array.length);
+    var sur2Array = ["ok", "al", "en", "yl", "if", "ax","ev","al", "ard", "ahn", "on", "az", "an", "ar",]
+    var sur2Num = Math.floor(Math.random() * sur2Array.length);
+    var surname = " " + sur1Array[sur1Num] + sur2Array[sur2Num];
+    return surname;
+  } else if (species === "Bajoran") {
+    var syl1Array = ["Ant", "Trom", "V", "El", "Ren", "Fal","Mer", "Ner","P","R","Tab","Kob","Lar", "G","Tal","Ad"];
+    var syl1Num = Math.floor(Math.random() * syl1Array.length);
+    var syl2Array = ["os", "ac", "ek", "em", "or","u", "ys", "ohl", "eon","an", "en","ale","ia", "ami",];
+    var syl2Num = Math.floor(Math.random() * syl2Array.length);
+    var surname = " " + syl1Array[syl1Num] + syl2Array[syl2Num] ;
+    return surname;
+  } else if (species === "Cardassian") {
+    var syl1Array = ["El","Ul", "Korb", "Ill","Nat", "Nan","Aam", "Mil", "Dam", "Dan", "Duk", "Ev", "Gar","Ghem","Had","Kam", "Mad", "Mav", "Mac", "Mek","Mos", "Nad","Oc","Parm", "Pir",];
+    var syl2Num = Math.floor(Math.random() * syl1Array.length);
+    var syl2Array = ["ani", "im","ian", "eny","in", "ar", "at","ek","ak", "or","red", "et","ett",];
+    var syl4Num = Math.floor(Math.random() * syl2Array.length);
+    var surname = " " + syl1Array[syl2Num] + syl2Array[syl4Num];
+    return surname;
+  } else {
+    return " ";
+  }
+}
+
 
 function nameGen(){
   if (species === "Vulcan" && gender === "Female") {
@@ -153,112 +254,94 @@ function nameGen(){
     var name = syl1Array[syl1Num] + syl2Array[syl2Num];
     return name;
   } else if (species === "Human") {
-    var nationArray = ["England", "Russia", "France","Japan"]
-    var nationNum = Math.floor(Math.random() * nationArray.length);
-    nation = nationArray[nationNum];
     if (nation === "England") {
-      var surArray = ["Johnson","Jackson", "Smith", "Tailor","Brown","Anderson", "Clark", "Wright", "Mitchell", "Thomas", "Rodriguez", "Lopez", "Perez", "Williams", "Lewis", "Hill", "Roberts", "Jones", "White", "Lee", "Scott", "Turner", "Harris", "Walker", "Green", "Phillips", "Davis", "Martin", "Hall", "Adams", "Campbell", "Miller", "Thompson", "Allen", "Baker", "Parker", "Wilson", "Garcia", "Young", "Gonzalez", "Evans", "Moore", "Martinez","Hernandez", "Nelson", "Edwards", "Taylor", "Robinson", "King", "Carter", "Collins",];
-      var surNum = Math.floor(Math.random() * surArray.length);
-      var surname = surArray[surNum];
       if (gender === "Male") {
         var firstArray = ["Mark","John","Jerry", "James", "Jake", "Benjamin", "Todd", "Scott","Robert", "Luke","David","Christopher", "George", "Ronald", "Richard", "Daniel", "Kenneth", "Anthony", "Charles", "Paul", "Steven", "Kevin", "Michael", "Joseph", "Edward", "Jason", "William", "Thomas", "Brian", "Jeff",];
         var firstNum = Math.floor(Math.random() * firstArray.length);
-
-        var name = firstArray[firstNum] + " " + surArray[surNum];
+        var name = firstArray[firstNum];
         return name;
       } else if (gender === "Female") {
         var firstArray = ["Susan", "Deanna","Amelia","Beverly","Jane","Michelle","Katheryn", "Kate","Mary", "Jennifer", "Lisa", "Sandra", "Patricia", "Maria", "Nancy", "Donna", "Laura", "Linda", "Susan", "Karen", "Carol", "Sarah", "Barbara", "Margaret","Betty", "Ruth", "Kimberly", "Elizabeth", "Dorothy", "Helen", "Sharon", "Deborah",];
         var firstNum = Math.floor(Math.random() * firstArray.length);
-        var name = firstArray[firstNum] + " " + surArray[surNum];
+        var name = firstArray[firstNum];
         return name;
       } else if (gender === "Nonbinary") {
         var firstArray = ["Susan", "Deanna","Amelia","Beverly","Jane","Michelle","Katheryn", "Kate","Mary", "Jennifer", "Lisa", "Sandra", "Patricia", "Maria", "Nancy", "Donna", "Laura", "Linda", "Susan", "Karen", "Carol", "Sarah", "Barbara", "Margaret","Betty", "Ruth", "Kimberly", "Elizabeth", "Dorothy", "Helen", "Sharon", "Deborah", "Mark","John","Jerry", "James", "Jake", "Benjamin", "Todd", "Scott","Robert", "Luke","David","Christopher", "George", "Ronald", "Richard", "Daniel", "Kenneth", "Anthony", "Charles", "Paul", "Steven", "Kevin", "Michael", "Joseph", "Edward", "Jason", "William", "Thomas", "Brian", "Jeff",];
         var firstNum = Math.floor(Math.random() * firstArray.length);
-        var name = firstArray[firstNum] + " " + surArray[surNum];
+        var name = firstArray[firstNum];
         return name;
       }
   } else if (nation === "Russia") {
-    var surArray = ["Ivanov", "Smirnov", "Kuznetsov","Popov", "Vasiliev", "Petrov", "Sokolov", "Mikhailov", "Fedorov", "Morozov", "Volkov", "Alexeev", "Lebedev", "Semenov", "Egorov", "Pavlov", "Kozlov", "Stepanov", "Nikolaev", "Orlov",];
-    var surNum = Math.floor(Math.random() * surArray.length);
-    var surname = surArray[surNum];
     if (gender === "Male") {
       var firstArray = ["Artem", "Aleksandr", "Maksim", "Ivan", "Mikhail", "Daniil", "Dmitry", "Kirill", "Andrey", "Egor", "Nikita", "Alexey", "Matvey", "Ilya", "Tomofey", "Roman", "Fedor", "Yaroslav", "Vladimir", "Sergey", "Arseny", "Nikolay", "Vladislav", "Gleb", "Konstantin", "Georgiy", "Pavel", "Stepan", "Denis"];
       var firstNum = Math.floor(Math.random() * firstArray.length);
       var patrArray = ["Andreevich","Stepanovich", "Yanovich", "Konstantinovich", "Ilyich", "Vladimovich", "Vladimirovich", "Yanovich", "Dmitrievich", "Ivanovich", "Makorovich", "Tarasovich", "Igorevich", "Nikitovich", "Larionovich", "Yakovich", "Alesnarovich", "Vitalievich", "Makarovich", "Valentinovich",];
       var patrNum = Math.floor(Math.random() * patrArray.length);
-      var name = firstArray[firstNum] + " " + patrArray[patrNum] + " " + surArray[surNum];
+      var name = firstArray[firstNum] + " " + patrArray[patrNum];
       return name;
     } else if (gender === "Female") {
       var firstArray = ["Sophia", "Maria", "Anastasia", "Anna", "Daria", "Viktoria", "Elizaveta", "Varvara", "Polina", "Alisa", "Ksenia", "Ekaterina", "Aleksandra", "Veronika", "Arina", "Vasilisa","Valeria", "Milana", "Ulyana", "Yeva","Margarita", "Kristina", "Alena", "Vera", "Taisiya", "Alina", "Kira", "Diana", "Yulia", "Olga",];
       var firstNum = Math.floor(Math.random() * firstArray.length);
       var patrArray = ["Artemievna", "Zakharovna", "Yakovna", "Yevgenievna", "Ruslanovna", "Yevgenievna", "Olegovna", "Pavlovna", "Aleksandrovna", "Romanovna", "Andreevna", "Rodionovna", "Leonidovna", "Semyonovna", "Igorievna", "Vladimovna", "Danilovna", "Zakharovna",];
       var patrNum = Math.floor(Math.random() * patrArray.length);
-      var name = firstArray[firstNum] + " " + patrArray[patrNum] + " " + surArray[surNum] + "a";
+      var name = firstArray[firstNum] + " " + patrArray[patrNum];
       return name;
     } else if (gender === "Nonbinary") {
       var firstArray = ["Sophia", "Maria", "Anastasia", "Anna", "Daria", "Viktoria", "Elizaveta", "Varvara", "Polina", "Alisa", "Ksenia", "Ekaterina", "Aleksandra", "Veronika", "Arina", "Vasilisa","Valeria", "Milana", "Ulyana", "Yeva","Margarita", "Kristina", "Alena", "Vera", "Taisiya", "Alina", "Kira", "Diana", "Yulia", "Olga","Artem", "Aleksandr", "Maksim", "Ivan", "Mikhail", "Daniil", "Dmitry", "Kirill", "Andrey", "Egor", "Nikita", "Alexey", "Matvey", "Ilya", "Tomofey", "Roman", "Fedor", "Yaroslav", "Vladimir", "Sergey", "Arseny", "Nikolay", "Vladislav", "Gleb", "Konstantin", "Georgiy", "Pavel", "Stepan", "Denis"];
       var firstNum = Math.floor(Math.random() * firstArray.length);
       var patrArray = ["Artemievna", "Zakharovna", "Yakovna", "Yevgenievna", "Ruslanovna", "Yevgenievna", "Olegovna", "Pavlovna", "Aleksandrovna", "Romanovna", "Andreevna", "Rodionovna", "Leonidovna", "Semyonovna", "Igorievna", "Vladimovna", "Danilovna", "Zakharovna",];
       var patrNum = Math.floor(Math.random() * patrArray.length);
-      var name = firstArray[firstNum] + " " + patrArray[patrNum] + " " + surArray[surNum];
+      var name = firstArray[firstNum] + " " + patrArray[patrNum];
       return name;
     }
   } else if (nation === "France") {
-    var surArray = ["Martin", "Bernard", "Duboi", "Thomas", "Robert", "Richard", "Petit", "Durand", "Leroy", "Moreau", "Simon", "Laurent", "Michel", "Garcia", "David", "Betrand","Roux", "Vincent", "Fournier", "Morel", "Girard", "Andre", "Lefevre", "Mercier", "Dupont", "Lambert", "Bonnet", "Francois", "Martinez", "Legrand", "Garnier", "Faure", "Rousseau", "Blanc", "Guerin", "Miller", "Henry", "Roussel", "Nicolas","Perrin", "Morin", "Mathieu", "Clement", "Gauthier", "Dumont", "Lopez", "Fontaine", "Chevalier", "Robin", "Masson", "Sanchez", "Gerard", "Nguyen", "Boyer", "Denis", "Lemaire", "Duval", "Gautier", "Roger", "Roche", "Roy", "Noel"];
-    var surNum = Math.floor(Math.random() * surArray.length);
-    var surname = surArray[surNum];
     if (gender === "Male") {
       var firstArray = ["Nathan", "Lucas", "Enzo", "Louis", "Hugo", "Gabriel", "Ethan", "Mathis", "Jules", "Arthur", "Tom", "Noah", "Maxime", "Yanis", "Adam", "Thomas", "Leo", "Paul", "Evan", "Nolan", "Axel", "Antoine","Timeo", "Mael", "Raphael", "Alexandre", "Theo", "Sacha", "Noa", "Baptiste", "Maxence", "Clement", "Mohamed", "Matheo", "Gabin", "Aexis", "Rayan", "Quentin", "Valentin", "Noe", "Mathys", "Victor", "Samuel", "Kylian", "Martin", "Romain",];
       var firstNum = Math.floor(Math.random() * firstArray.length);
-      var name = firstArray[firstNum] + " " + surArray[surNum];
+      var name = firstArray[firstNum];
       return name;
     } else if (gender === "Female") {
       var firstArray = ["Emma", "Manon", "Lola", "Jade", "Camille", "Sarah", "Louise", "Lilou", "Lea", "Clara", "Chloe", "Eva", "Lina", "Ines", "Louna", "Romane", "Maelys", "Juliette", "Lucie", "Zoe", "Ambre", "Alice", "Lou", "Lena","Lisa", "Jeanne", "Louane", "Ines", "Mathilde", "Charlotte", "Marie", "Anna", "Nina", "Anais", "Pauline", "Lana", "Laura", "Lily", "Alicia", "Julie", "Julia", "Rose", "Margaux", "Noemie", "Luna","Elise", "Margot", "Elisa", "Zoe", "Elsa", "Lena", "Clemence", "Justine", "Oceane", "Celia", "Agatha", "Inaya", "Yasmine", "Emilie", "Faustine", "Maelle", "Maeva", "Leonie", "Gabrielle",];
       var firstNum = Math.floor(Math.random() * firstArray.length);
-      var name = firstArray[firstNum] + " " + surArray[surNum];
+      var name = firstArray[firstNum];
       return name;
     } else if (gender === "Nonbinary") {
       var firstArray = ["Emma", "Manon", "Lola", "Jade", "Camille", "Sarah", "Louise", "Lilou", "Lea", "Clara", "Chloe", "Eva", "Lina", "Ines", "Louna", "Romane", "Maelys", "Juliette", "Lucie", "Zoe", "Ambre", "Alice", "Lou", "Lena","Lisa", "Jeanne", "Louane", "Ines", "Mathilde", "Charlotte", "Marie", "Anna", "Nina", "Anais", "Pauline", "Lana", "Laura", "Lily", "Alicia", "Julie", "Julia", "Rose", "Margaux", "Noemie", "Luna","Elise", "Margot", "Elisa", "Zoe", "Elsa", "Lena", "Clemence", "Justine", "Oceane", "Celia", "Agatha", "Inaya", "Yasmine", "Emilie", "Faustine", "Maelle", "Maeva", "Leonie", "Gabrielle","Nathan", "Lucas", "Enzo", "Louis", "Hugo", "Gabriel", "Ethan", "Mathis", "Jules", "Arthur", "Tom", "Noah", "Maxime", "Yanis", "Adam", "Thomas", "Leo", "Paul", "Evan", "Nolan", "Axel", "Antoine","Timeo", "Mael", "Raphael", "Alexandre", "Theo", "Sacha", "Noa", "Baptiste", "Maxence", "Clement", "Mohamed", "Matheo", "Gabin", "Aexis", "Rayan", "Quentin", "Valentin", "Noe", "Mathys", "Victor", "Samuel", "Kylian", "Martin", "Romain",];
       var firstNum = Math.floor(Math.random() * firstArray.length);
-      var name = firstArray[firstNum] + " " + surArray[surNum];
+      var name = firstArray[firstNum];
       return name;
     }
   } else if (nation === "Japan") {
-    var surArray = ["Sato", "Suzuki", "Takahashi", "Tanaka", "Watanabe", "Ito", "Yamamoto", "Nakamura", "Kobayashi", "Kato", "Yoshida", "Yamada", "Sasaki", "Yamaguchi", "Saito", "Matsumoto", "Inoue", "Kimura", "Hayashi", "Shimizu", "Yamazaki", "Mori", "Abe", "Ikeda", "Hashimoto", "Yamashita", "Ishikawa", "Nakajima", "Maed", "Fujita", "Ogawa", "Goto", "Okada", "Hasegawa", "Murakami", "Kondo", "Ishii", "Sakamoto", "Endo", "Aoki", "Fujii", "Nishimura", "Fukuda", "Ota", "Miura", "Fujiwara", "Okamoto", "Matsuda", "Nakagawa", "Nakano", "Harada", "Ono", "Tamura", "Takeuchi", "Kaneko", "Wada", "Nakayama", "Ishida", "Ueda", "Morita", "Hara", "Shibata", "Sakai", "Kudo", "Yokoyama", "Miyazaki", "Miyamoto", "Uchida", "Takagi", "Ando", "Taniguchi", "Ohno", "Maruyama", "Imai", "Takada", "Fujimoto", "Takeda"];
-    var surNum = Math.floor(Math.random() * surArray.length);
-    var surname = surArray[surNum];
     if (gender === "Male") {
       var firstArray = ["Haruto", "Yuto", "Sota","Yuki", "Hayato", "Haruki", "Ryusei", "Koki", "Sora", "Sosuke", "Riku", "Soma", "Ryota", "Rui", "Kaito", "Haru", "Kota", "Yusei", "Yuito", "Yuma", "Ren", "Takumi", "Minato", "Eita", "Shota", "Daiki", "Hiroto", "Kosei", "Takeru", "Hinata", "Toma", "Manato", "Ryuki", "Rikuto", "Aoto", "Ibuki", "Tatsuki", "Haruma", "Yamato", "Ryuto", "Taisei","Yuta", "Itsuki", "Soshi", "Taiga", "Kosuke", "Shoma", "Yushin", "Ryuga", "Ryo", "Rento",];
       var firstNum = Math.floor(Math.random() * firstArray.length);
-      var name = firstArray[firstNum] + " " + surname;
+      var name = firstArray[firstNum];
       return name;
     } else if (gender === "Female") {
       var firstArray = ["Yui", "Rio", "Yuna", "Hina", "Koharu", "Hinata", "Mei", "Mio", "Saki", "Miyu", "Kokona", "Haruka", "Rin", "Akari", "Yuna", "Honoka", "Momoka", "Aoi", "Ichika", "Sakura", "Himari", "Yume", "Airi", "Sara", "Nanami", "Ayaka", "Yuka", "Riko", "Noa", "Mao", "Yua", "Ayane", "Hiyori", "Misaki", "Yuzuki", "Rina", "Sana", "Ria", "Ruka", "Kanon", "Kaho", "Hana", "Karin", "Risa", "Shiori", "Fuka", "Rino", "Anna", "Natsuki", "Nana", "Reina",];
       var firstNum = Math.floor(Math.random() * firstArray.length);
-      var name = firstArray[firstNum] + " " + surname;
+      var name = firstArray[firstNum];
       return name;
     } else if (gender === "Nonbinary") {
       var firstArray = ["Haruto", "Yuto", "Sota","Yuki", "Hayato", "Haruki", "Ryusei", "Koki", "Sora", "Sosuke", "Riku", "Soma", "Ryota", "Rui", "Kaito", "Haru", "Kota", "Yusei", "Yuito", "Yuma", "Ren", "Takumi", "Minato", "Eita", "Shota", "Daiki", "Hiroto", "Kosei", "Takeru", "Hinata", "Toma", "Manato", "Ryuki", "Rikuto", "Aoto", "Ibuki", "Tatsuki", "Haruma", "Yamato", "Ryuto", "Taisei","Yuta", "Itsuki", "Soshi", "Taiga", "Kosuke", "Shoma", "Yushin", "Ryuga", "Ryo", "Rento", "Yui", "Rio", "Yuna", "Hina", "Koharu", "Hinata", "Mei", "Mio", "Saki", "Miyu", "Kokona", "Haruka", "Rin", "Akari", "Yuna", "Honoka", "Momoka", "Aoi", "Ichika", "Sakura", "Himari", "Yume", "Airi", "Sara", "Nanami", "Ayaka", "Yuka", "Riko", "Noa", "Mao", "Yua", "Ayane", "Hiyori", "Misaki", "Yuzuki", "Rina", "Sana", "Ria", "Ruka", "Kanon", "Kaho", "Hana", "Karin", "Risa", "Shiori", "Fuka", "Rino", "Anna", "Natsuki", "Nana", "Reina",];
       var firstNum = Math.floor(Math.random() * firstArray.length);
-      var name = firstArray[firstNum] + " " + surname;
+      var name = firstArray[firstNum];
       return name;
     }
   }
 } else if (species === "Klingon") {
   var syl1Array = ["W", "R", "K'R", "K'T", "Gow", "Mart", "M", "G", "Kr","K", "Br", "G'tr", "Kur", "V", "Mol", "Mow", "T'Gr","Tor","Dur","T","Gr","Kat",];
   var syl1Num = Math.floor(Math.random() * syl1Array.length);
-  var syl1BNum = Math.floor(Math.random() * syl1Array.length);
   var syl2Array = ["orf", "org", "uge","oth", "ok",  "ot","ex","ulhe", "aang", "az","agh", "ogh", "oqh","oggra", "or", "orkka", "ath","al", "as", "afk"];
   var syl2Num = Math.floor(Math.random() * syl2Array.length);
-  var syl2BNum = Math.floor(Math.random() * syl2Array.length);
   if (gender === "Male") {
-    var name = syl1Array[syl1Num] + syl2Array[syl2Num] + ", son of " + syl1Array[syl1BNum] + syl2Array[syl2BNum];
+    var name = syl1Array[syl1Num] + syl2Array[syl2Num];
     return name;
   } else if (gender === "Female") {
-    var name = syl1Array[syl1Num] + syl2Array[syl2Num] + ", daughter of " + syl1Array[syl1BNum] + syl2Array[syl2BNum];
+    var name = syl1Array[syl1Num] + syl2Array[syl2Num];
     return name;
   } else if (gender === "Nonbinary") {
-    var name = syl1Array[syl1Num] + syl2Array[syl2Num] + ", child of " + syl1Array[syl1BNum] + syl2Array[syl2BNum];
+    var name = syl1Array[syl1Num] + syl2Array[syl2Num];
     return name;
   }
 } else if (species === "Betazoid"){
@@ -267,33 +350,21 @@ function nameGen(){
     var syl1Num = Math.floor(Math.random() * syl1Array.length);
     var syl2Array = ["xaza", "xana", "rra", "na", "xthar", "teca", "lan", "shara", "axa", "nnela", "ranna",];
     var syl2Num = Math.floor(Math.random() * syl2Array.length);
-    var sur1Array = ["T","D","F","G","K","Pr","Th","Tr","V", "Dy","L", "X",]
-    var sur1Num = Math.floor(Math.random() * sur1Array.length);
-    var sur2Array = ["el", "eo", "an", "ort", "av", "if","on", "ir","ex"]
-    var sur2Num = Math.floor(Math.random() * sur2Array.length);
-    var name = syl1Array[syl1Num] + syl2Array[syl2Num] + " " + sur1Array[sur1Num] + sur2Array[sur2Num];
+    var name = syl1Array[syl1Num] + syl2Array[syl2Num];
     return name;
   } else if (gender === "Male") {
     var syl1Array = ["Cha", "Lwa", "Illi", "Ada", "Bya", "Pera", "Lano","Eu", "Mry", "Dre", "Mola","Yula"];
     var syl1Num = Math.floor(Math.random() * syl1Array.length);
     var syl2Array = ["xazen", "xanum", "rran", "nar", "xthar", "tecan", "lan", "sharin", "axal", "nnelas", "rannin"];
     var syl2Num = Math.floor(Math.random() * syl2Array.length);
-    var sur1Array = ["T","D","F","G","K","Pr","Th","Tr","V", "Dy","L", "X",]
-    var sur1Num = Math.floor(Math.random() * sur1Array.length);
-    var sur2Array = ["el", "eo", "an", "ort", "av", "if","on", "ir","ex"]
-    var sur2Num = Math.floor(Math.random() * sur2Array.length);
-    var name = syl1Array[syl1Num] + syl2Array[syl2Num] + " " + sur1Array[sur1Num] + sur2Array[sur2Num];
+    var name = syl1Array[syl1Num] + syl2Array[syl2Num];
     return name;
   } else if (gender === "Nonbinary") {
     var syl1Array = ["Cha", "Lwa", "Illi", "Ada", "Bya", "Pera", "Lano","Eu", "Mry", "Dre", "Mola","Yula"];
     var syl1Num = Math.floor(Math.random() * syl1Array.length);
     var syl2Array = ["xazen", "xanum", "rran", "nar", "xthar", "tecan", "lan", "sharin", "axal", "nnelas", "rannin", "xaza", "xana", "rra", "na", "xthar", "teca", "lan", "shara", "axa", "nnela", "ranna",];
     var syl2Num = Math.floor(Math.random() * syl2Array.length);
-    var sur1Array = ["T","D","F","G","K","Pr","Th","Tr","V", "Dy","L", "X",]
-    var sur1Num = Math.floor(Math.random() * sur1Array.length);
-    var sur2Array = ["el", "eo", "an", "ort", "av", "if","on", "ir","ex"]
-    var sur2Num = Math.floor(Math.random() * sur2Array.length);
-    var name = syl1Array[syl1Num] + syl2Array[syl2Num] + " " + sur1Array[sur1Num] + sur2Array[sur2Num];
+    var name = syl1Array[syl1Num] + syl2Array[syl2Num];
     return name;
   }
 } else if (species === "Trill") {
@@ -308,34 +379,24 @@ function nameGen(){
   var syl1Num = Math.floor(Math.random() * syl1Array.length);
   var syl2Array = ["ri", "zia", "eta", "a", "as", "ista", "lin", "ra", "ani", "em","anne","en", "za","ta"];
   var syl2Num = Math.floor(Math.random() * syl2Array.length);
-  var sur1Array = ["B","Br", "Cl", "C", "D","F","G", "Gr", "K", "Ker", "Kal","Lex","M","N","Od","Per", ]
-  var sur1Num = Math.floor(Math.random() * sur1Array.length);
-  var sur2Array = ["ok", "al", "en", "yl", "if", "ax","ev","al", "ard", "ahn", "on", "az", "an", "ar",]
-  var sur2Num = Math.floor(Math.random() * sur2Array.length);
-  var name = syl1Array[syl1Num] + syl2Array[syl2Num] + " " + sur1Array[sur1Num] + sur2Array[sur2Num];
+  var name = syl1Array[syl1Num] + syl2Array[syl2Num];
   return name;
 } else if (species === "Bajoran") {
-  var syl1Array = ["Ant", "Trom", "V", "El", "Ren", "Fal","Mer", "Ner","P","R","Tab","Kob","Lar", "G","Tal","Ad"];
-  var syl1Num = Math.floor(Math.random() * syl1Array.length);
-  var syl2Array = ["os", "ac", "ek", "em", "or","u", "ys", "ohl", "eon","an", "en","ale","ia", "ami",];
-  var syl2Num = Math.floor(Math.random() * syl2Array.length);
   var sur1Array = ["Alen", "Bar", "Ben", "Dek", "Far", "Kir","Lath", "Lo","Mar", "R"]
   var sur1Num = Math.floor(Math.random() * sur1Array.length);
   var sur2Array = ["is", "eil", "ten", "on", "en","a","rit", "at", "o"]
   var sur2Num = Math.floor(Math.random() * sur2Array.length);
-  var name = sur1Array[sur1Num] + sur2Array[sur2Num] + " " + syl1Array[syl1Num] + syl2Array[syl2Num] ;
+  var name = sur1Array[sur1Num] + sur2Array[sur2Num];
   return name;
 } else if (species === "Cardassian") {
   var syl1Array = ["El","Ul", "Korb", "Ill","Nat", "Nan","Aam", "Mil", "Dam", "Dan", "Duk", "Ev", "Gar","Ghem","Had","Kam", "Mad", "Mav", "Mac", "Mek","Mos", "Nad","Oc","Parm", "Pir",];
   var syl1Num = Math.floor(Math.random() * syl1Array.length);
-  var syl2Num = Math.floor(Math.random() * syl1Array.length);
   var syl2Array = ["ani", "im","ian", "eny","in", "ar", "at","ek","ak", "or","red", "et","ett",];
   var syl3Num = Math.floor(Math.random() * syl2Array.length);
-  var syl4Num = Math.floor(Math.random() * syl2Array.length);
   if (gender === "Female") {
-    var name = syl1Array[syl1Num] + syl2Array[syl3Num] + "a" + " " + syl1Array[syl2Num] + syl2Array[syl4Num];
+    var name = syl1Array[syl1Num] + syl2Array[syl3Num] + "a";
   } else {
-    var name = syl1Array[syl1Num] + syl2Array[syl3Num] + " " + syl1Array[syl2Num] + syl2Array[syl4Num];
+    var name = syl1Array[syl1Num] + syl2Array[syl3Num];
   }
   return name;
 } else if (species === "Freed Borg drone") {
@@ -350,37 +411,62 @@ function nameGen(){
 
 function relGen(x, characterArray){
   var relArray = [];
+  if (characterArray[x].gender === "Female") {
+    pronoun = "She";
+  } else if (characterArray[x].gender === "Male") {
+    pronoun = "He";
+  } else {
+    pronoun = "Xe";
+  }
+  var charIndex = 0;
   characterArray.forEach(function(character) {
+    rankArray2 = ["Captain", "First Officer", "Science Officer", "Security Officer", "Dr.", "Chief Engineer", "Counselor",];
     if (characterArray[x].name != character.name) {
-      var relationArray = ["is in love with", "looks down on", "hates", "admires", "respects", "is irritated by", "is best friends with", "is a rival to", "used to be in a relationship with", "used to be friends with", "is married to", "is dating"];
+      var relationArray = ["is in love with", "looks down on", "hates", "admires", "respects", "is irritated by", "is best friends with", "is a rival to", "used to be in a relationship with", "used to be friends with", "is dating", "is childhood friends with", "doesn't trust", "is aggravated by", "is cautious about", "is confused by",  "is curious about", "envies", "is intimidated by","is like a brother to","is amused by", "is critical of", "resents",];
       var relNum = Math.floor(Math.random() * relationArray.length);
-      var relationships = characterArray[x].name + " " + relationArray[relNum] + " " + character.name;
+      if (character.species === "Trill" || character.species === "Klingon" || character.species === "Vulcan" || character.species === "Freed Borg drone") {
+        var relationships = " " + relationArray[relNum] + " " + rankArray2[charIndex] + " " +  character.name;
+      } else {
+        var relationships = " " + relationArray[relNum] + " " + rankArray2[charIndex] + " " +  character.surname;
+      }
+
       relArray.push(relationships);
     }
+    charIndex +=1;
   });
-  var relList = relArray[0] + ". " + relArray[1] + ". " + relArray[2] + ". " + relArray[3] + ". " + relArray[4] + ". " + relArray[5] + ". ";
-  return relList;
+  if (characterArray[x].species === "Trill" || characterArray[x].species === "Klingon" || characterArray[x].species === "Vulcan" || characterArray[x].species === "Freed Borg drone") {
+    var relList = rankArray2[x] + " " + characterArray[x].name +  relArray[0] + ". " + pronoun + relArray[1] + ". " + pronoun + relArray[2] + ". " + pronoun + relArray[3] + ". " + pronoun + relArray[4] + ". " + pronoun  + relArray[5] + ". ";
+    return relList;
+  } else {
+    var relList = rankArray2[x] + " " + characterArray[x].surname +  relArray[0] + ". " + pronoun + relArray[1] + ". " + pronoun + relArray[2] + ". " + pronoun + relArray[3] + ". " + pronoun + relArray[4] + ". " + pronoun  + relArray[5] + ". ";
+    return relList;
+  }
+
 }
+
+var characterArray = [];
 
 $(document).ready(function() {
   $('.add-button').click(function(){
     event.preventDefault();
 
-    var characterArray = [];
+    characterArray = [];
 
     species = specGen();
+    nation = nationGen();
     gender = genderGen();
     rank = rankGen();
     name = nameGen();
+    surname = surNameGen();
     age = ageGen();
     pos = posGen();
     pers = persGen();
     skin = skinGen();
     hair = hairGen();
     eye = eyeGen();
-    var captain = new Character(name, gender, age,species, pers);
+    var captain = new Character(name, surname, gender, age,species, pers);
     characterArray.push(captain);
-    $("#captain .name").text(name);
+    $("#captain .name").text(name + surname);
     $("#captain .species").text(species);
     $("#captain .gender").text(gender);
     $("#captain .age").text(age);
@@ -391,18 +477,20 @@ $(document).ready(function() {
     $("#captain .eye").text(eye);
 
     species = specGen();
+    nation = nationGen();
     gender = genderGen();
     rank = rankGen();
     name = nameGen();
+    surname = surNameGen();
     age = ageGen();
     pos = posGen();
     pers = persGen();
     skin = skinGen();
     hair = hairGen();
     eye = eyeGen();
-    var firstOfficer = new Character(name, gender, age,species, pers);
+    var firstOfficer = new Character(name, surname, gender, age,species, pers);
     characterArray.push(firstOfficer);
-    $("#first-officer .name").text(name);
+    $("#first-officer .name").text(name + surname);
     $("#first-officer .species").text(species);
     $("#first-officer .gender").text(gender);
     $("#first-officer .age").text(age);
@@ -413,18 +501,20 @@ $(document).ready(function() {
     $("#first-officer .eye").text(eye);
 
     species = specGen();
+    nation = nationGen();
     gender = genderGen();
     rank = rankGen();
     name = nameGen();
+    surname = surNameGen();
     age = ageGen();
     pos = posGen();
     pers = persGen();
     skin = skinGen();
     hair = hairGen();
     eye = eyeGen();
-    var scienceOfficer = new Character(name, gender, age,species, pers);
+    var scienceOfficer = new Character(name, surname, gender, age,species, pers);
     characterArray.push(scienceOfficer);
-    $("#science-officer .name").text(name);
+    $("#science-officer .name").text(name + surname);
     $("#science-officer .species").text(species);
     $("#science-officer .gender").text(gender);
     $("#science-officer .age").text(age);
@@ -435,18 +525,20 @@ $(document).ready(function() {
     $("#science-officer .eye").text(eye);
 
     species = specGen();
+    nation = nationGen();
     gender = genderGen();
     rank = rankGen();
     name = nameGen();
+    surname = surNameGen();
     age = ageGen();
     pos = posGen();
     pers = persGen();
     skin = skinGen();
     hair = hairGen();
     eye = eyeGen();
-    var securityOfficer = new Character(name, gender, age,species, pers);
+    var securityOfficer = new Character(name, surname, gender, age,species, pers);
     characterArray.push(securityOfficer);
-    $("#security-officer .name").text(name);
+    $("#security-officer .name").text(name + surname);
     $("#security-officer .species").text(species);
     $("#security-officer .gender").text(gender);
     $("#security-officer .age").text(age);
@@ -457,18 +549,20 @@ $(document).ready(function() {
     $("#security-officer .eye").text(eye);
 
     species = specGen();
+    nation = nationGen();
     gender = genderGen();
     rank = rankGen();
     name = nameGen();
+    surname = surNameGen();
     age = ageGen();
     pos = posGen();
     pers = persGen();
     skin = skinGen();
     hair = hairGen();
     eye = eyeGen();
-    var doctor = new Character(name, gender, age,species, pers);
+    var doctor = new Character(name, surname, gender, age,species, pers);
     characterArray.push(doctor);
-    $("#doctor .name").text(name);
+    $("#doctor .name").text(name + surname);
     $("#doctor .species").text(species);
     $("#doctor .gender").text(gender);
     $("#doctor .age").text(age);
@@ -479,18 +573,20 @@ $(document).ready(function() {
     $("#doctor .eye").text(eye);
 
     species = specGen();
+    nation = nationGen();
     gender = genderGen();
     rank = rankGen();
     name = nameGen();
+    surname = surNameGen();
     age = ageGen();
     pos = posGen();
     pers = persGen();
     skin = skinGen();
     hair = hairGen();
     eye = eyeGen();
-    var engineer = new Character(name, gender, age,species, pers);
+    var engineer = new Character(name, surname, gender, age,species, pers);
     characterArray.push(engineer);
-    $("#engineer .name").text(name);
+    $("#engineer .name").text(name + surname);
     $("#engineer .species").text(species);
     $("#engineer .gender").text(gender);
     $("#engineer .age").text(age);
@@ -501,18 +597,21 @@ $(document).ready(function() {
     $("#engineer .eye").text(eye);
 
     species = specGen();
+    nation = nationGen();
     gender = genderGen();
     rank = rankGen();
     name = nameGen();
+    surname = surNameGen();
     age = ageGen();
     pos = posGen();
     pers = persGen();
     skin = skinGen();
     hair = hairGen();
     eye = eyeGen();
-    var counselor = new Character(name, gender, age,species, pers);
+    var counselor = new Character(name, surname, gender, age,species, pers);
     characterArray.push(counselor);
-    $("#counselor .name").text(name);
+    console.log(characterArray);
+    $("#counselor .name").text(name + surname);
     $("#counselor .species").text(species);
     $("#counselor .gender").text(gender);
     $("#counselor .age").text(age);
@@ -525,6 +624,12 @@ $(document).ready(function() {
     ship = shipGen();
     $("#ship").text(ship);
     $("#captain .relationships").text(relGen(0, characterArray));
+    $("#first-officer .relationships").text(relGen(1, characterArray));
+    $("#science-officer .relationships").text(relGen(2, characterArray));
+    $("#security-officer .relationships").text(relGen(3, characterArray));
+    $("#doctor .relationships").text(relGen(4, characterArray));
+    $("#engineer .relationships").text(relGen(5, characterArray));
+    $("#counselor .relationships").text(relGen(6, characterArray));
     $("#chargen").show();
   });
   $('#captain-button').click(function(){
@@ -532,13 +637,17 @@ $(document).ready(function() {
     gender = genderGen();
     rank = rankGen();
     name = nameGen();
+    surname = surNameGen();
     age = ageGen();
     pos = posGen();
     pers = persGen();
     skin = skinGen();
     hair = hairGen();
     eye = eyeGen();
-    $("#captain .name").text(name);
+    var captain = new Character(name, surname, gender, age,species, pers);
+    characterArray[0] = captain;
+    // relationship = relGen(0, characterArray);
+    $("#captain .name").text(name + surname);
     $("#captain .species").text(species);
     $("#captain .gender").text(gender);
     $("#captain .age").text(age);
@@ -547,20 +656,30 @@ $(document).ready(function() {
     $("#captain .skin").text(skin);
     $("#captain .hair").text(hair);
     $("#captain .eye").text(eye);
-});
+    $("#captain .relationships").text(relGen(0, characterArray));
+    $("#first-officer .relationships").text(relGen(1, characterArray));
+    $("#science-officer .relationships").text(relGen(2, characterArray));
+    $("#security-officer .relationships").text(relGen(3, characterArray));
+    $("#doctor .relationships").text(relGen(4, characterArray));
+    $("#engineer .relationships").text(relGen(5, characterArray));
+    $("#counselor .relationships").text(relGen(6, characterArray));}
+  );
 
 $('#first-button').click(function(){
   species = specGen();
   gender = genderGen();
   rank = rankGen();
   name = nameGen();
+  surname = surNameGen();
   age = ageGen();
   pos = posGen();
   pers = persGen();
   skin = skinGen();
   hair = hairGen();
   eye = eyeGen();
-  $("#first-officer .name").text(name);
+  var firstOfficer = new Character(name, surname, gender, age,species, pers);
+  characterArray[1] = firstOfficer;
+  $("#first-officer .name").text(name + surname);
   $("#first-officer .species").text(species);
   $("#first-officer .gender").text(gender);
   $("#first-officer .age").text(age);
@@ -569,20 +688,29 @@ $('#first-button').click(function(){
   $("#first-officer .skin").text(skin);
   $("#first-officer .hair").text(hair);
   $("#first-officer .eye").text(eye);
-});
+  $("#captain .relationships").text(relGen(0, characterArray));
+  $("#first-officer .relationships").text(relGen(1, characterArray));
+  $("#science-officer .relationships").text(relGen(2, characterArray));
+  $("#security-officer .relationships").text(relGen(3, characterArray));
+  $("#doctor .relationships").text(relGen(4, characterArray));
+  $("#engineer .relationships").text(relGen(5, characterArray));
+  $("#counselor .relationships").text(relGen(6, characterArray))});
 
 $('#science-button').click(function(){
   species = specGen();
   gender = genderGen();
   rank = rankGen();
   name = nameGen();
+  surname = surNameGen();
   age = ageGen();
   pos = posGen();
   pers = persGen();
   skin = skinGen();
   hair = hairGen();
   eye = eyeGen();
-  $("#science-officer .name").text(name);
+  var scienceOfficer = new Character(name, surname, gender, age, species, pers);
+  characterArray[2] = scienceOfficer;
+  $("#science-officer .name").text(name + surname);
   $("#science-officer .species").text(species);
   $("#science-officer .gender").text(gender);
   $("#science-officer .age").text(age);
@@ -591,20 +719,30 @@ $('#science-button').click(function(){
   $("#science-officer .skin").text(skin);
   $("#science-officer .hair").text(hair);
   $("#science-officer .eye").text(eye);
-});
+  $("#captain .relationships").text(relGen(0, characterArray));
+  $("#first-officer .relationships").text(relGen(1, characterArray));
+  $("#science-officer .relationships").text(relGen(2, characterArray));
+  $("#security-officer .relationships").text(relGen(3, characterArray));
+  $("#doctor .relationships").text(relGen(4, characterArray));
+  $("#engineer .relationships").text(relGen(5, characterArray));
+  $("#counselor .relationships").text(relGen(6, characterArray))});
 
 $('#security-button').click(function(){
   species = specGen();
   gender = genderGen();
   rank = rankGen();
   name = nameGen();
+  surname = surNameGen();
   age = ageGen();
   pos = posGen();
   pers = persGen();
   skin = skinGen();
   hair = hairGen();
   eye = eyeGen();
-  $("#security-officer .name").text(name);
+  var securityOfficer = new Character(name, surname, gender, age,species, pers);
+  characterArray[3] = securityOfficer;
+  relationship = relGen(3, characterArray);
+  $("#security-officer .name").text(name + surname);
   $("#security-officer .species").text(species);
   $("#security-officer .gender").text(gender);
   $("#security-officer .age").text(age);
@@ -613,6 +751,7 @@ $('#security-button').click(function(){
   $("#security-officer .skin").text(skin);
   $("#security-officer .hair").text(hair);
   $("#security-officer .eye").text(eye);
+  $("#security-officer .relationships").text(relationship);
 });
 
 $('#doc-button').click(function(){
@@ -620,13 +759,16 @@ $('#doc-button').click(function(){
   gender = genderGen();
   rank = rankGen();
   name = nameGen();
+  surname = surNameGen();
   age = ageGen();
   pos = posGen();
   pers = persGen();
   skin = skinGen();
   hair = hairGen();
   eye = eyeGen();
-  $("#doctor .name").text(name);
+  var doctor = new Character(name, surname, gender, age,species, pers);
+  characterArray[4] = doctor;
+  $("#doctor .name").text(name + surname);
   $("#doctor .species").text(species);
   $("#doctor .gender").text(gender);
   $("#doctor .age").text(age);
@@ -635,20 +777,29 @@ $('#doc-button').click(function(){
   $("#doctor .skin").text(skin);
   $("#doctor .hair").text(hair);
   $("#doctor .eye").text(eye);
-});
+  $("#captain .relationships").text(relGen(0, characterArray));
+  $("#first-officer .relationships").text(relGen(1, characterArray));
+  $("#science-officer .relationships").text(relGen(2, characterArray));
+  $("#security-officer .relationships").text(relGen(3, characterArray));
+  $("#doctor .relationships").text(relGen(4, characterArray));
+  $("#engineer .relationships").text(relGen(5, characterArray));
+  $("#counselor .relationships").text(relGen(6, characterArray))});
 
 $('#engineer-button').click(function(){
   species = specGen();
   gender = genderGen();
   rank = rankGen();
   name = nameGen();
+  surname = surNameGen();
   age = ageGen();
   pos = posGen();
   pers = persGen();
   skin = skinGen();
   hair = hairGen();
   eye = eyeGen();
-  $("#engineer .name").text(name);
+  var engineer = new Character(name, surname, gender, age,species, pers);
+  characterArray[5] = engineer;
+  $("#engineer .name").text(name + surname);
   $("#engineer .species").text(species);
   $("#engineer .gender").text(gender);
   $("#engineer .age").text(age);
@@ -657,20 +808,29 @@ $('#engineer-button').click(function(){
   $("#engineer .skin").text(skin);
   $("#engineer .hair").text(hair);
   $("#engineer .eye").text(eye);
-});
+  $("#captain .relationships").text(relGen(0, characterArray));
+  $("#first-officer .relationships").text(relGen(1, characterArray));
+  $("#science-officer .relationships").text(relGen(2, characterArray));
+  $("#security-officer .relationships").text(relGen(3, characterArray));
+  $("#doctor .relationships").text(relGen(4, characterArray));
+  $("#engineer .relationships").text(relGen(5, characterArray));
+  $("#counselor .relationships").text(relGen(6, characterArray))});
 
 $('#counselor-button').click(function(){
   species = specGen();
   gender = genderGen();
   rank = rankGen();
   name = nameGen();
+  surname = surNameGen();
   age = ageGen();
   pos = posGen();
   pers = persGen();
   skin = skinGen();
   hair = hairGen();
   eye = eyeGen();
-  $("#counselor .name").text(name);
+  var counselor = new Character(name, surname, gender, age,species, pers);
+  characterArray[6] = counselor;
+  $("#counselor .name").text(name + surname);
   $("#counselor .species").text(species);
   $("#counselor .gender").text(gender);
   $("#counselor .age").text(age);
@@ -679,7 +839,13 @@ $('#counselor-button').click(function(){
   $("#counselor .skin").text(skin);
   $("#counselor .hair").text(hair);
   $("#counselor .eye").text(eye);
-});
+  $("#captain .relationships").text(relGen(0, characterArray));
+  $("#first-officer .relationships").text(relGen(1, characterArray));
+  $("#science-officer .relationships").text(relGen(2, characterArray));
+  $("#security-officer .relationships").text(relGen(3, characterArray));
+  $("#doctor .relationships").text(relGen(4, characterArray));
+  $("#engineer .relationships").text(relGen(5, characterArray));
+  $("#counselor .relationships").text(relGen(6, characterArray))});
 
 $('#ship-button').click(function(){
   ship = shipGen();
