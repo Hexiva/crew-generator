@@ -382,7 +382,7 @@ function nameGen(){
   var name = syl1Array[syl1Num] + syl2Array[syl2Num];
   return name;
 } else if (species === "Bajoran") {
-  var sur1Array = ["Alen", "Bar", "Ben", "Dek", "Far", "Kir","Lath", "Lo","Mar", "R"]
+  var sur1Array = ["Alen", "Bar", "Ben", "Dek", "Far", "Kir","Lath", "Lo","Mar", "Ret"]
   var sur1Num = Math.floor(Math.random() * sur1Array.length);
   var sur2Array = ["is", "eil", "ten", "on", "en","a","rit", "at", "o"]
   var sur2Num = Math.floor(Math.random() * sur2Array.length);
@@ -422,7 +422,58 @@ function relGen(x, characterArray){
   characterArray.forEach(function(character) {
     rankArray2 = ["Captain", "First Officer", "Science Officer", "Security Officer", "Dr.", "Chief Engineer", "Counselor",];
     if (characterArray[x].name != character.name) {
-      var relationArray = ["is in love with", "looks down on", "hates", "admires", "respects", "is irritated by", "is best friends with", "is a rival to", "used to be in a relationship with", "used to be friends with", "is dating", "is childhood friends with", "doesn't trust", "is aggravated by", "is cautious about", "is confused by",  "is curious about", "envies", "is intimidated by","is like a brother to","is amused by", "is critical of", "resents",];
+      if (characterArray[x].gender === "Female") {
+        var sibling = "sister";
+      } else if (characterArray[x].gender === "Male") {
+        var sibling = "brother";
+      } else {
+        var sibling = "sibling";
+      }
+      var relationArray = ["looks down on", "hates", "admires", "respects", "is irritated by", "is best friends with", "is a rival to", "used to be friends with", "doesn't trust", "is aggravated by", "is cautious about", "is confused by",  "is curious about", "envies", "is intimidated by","is like a " + sibling + " to","is amused by", "is critical of", "resents",];
+
+      if (characterArray[x].species === "Joined Trill") {
+        var trillAge1 = String(characterArray[x].age);
+        var charAge1 = trillAge1.substring(0, 2);
+      } else {
+        var charAge1 = characterArray[x].age;
+      }
+
+      if (character.species === "Joined Trill") {
+        var trillAge2 = String(characterArray[x].age);
+        var charAge2 = trillAge2.substring(0, 2);
+      } else {
+        var charAge2 = character.age;
+      }
+
+      if (charAge1*0.840909091-0.05 > charAge2 || charAge2*0.840909091-0.05 > charAge1) {
+        // console.log(characterArray[x].name + ": " + charAge1);
+        // console.log(character.name + ": " + charAge2);
+        // console.log("can't date");
+      } else {
+        var romanceArray = ["is in love with", "used to be in a relationship with", "is dating",];
+        relationArray = relationArray.concat(romanceArray);
+        // console.log(characterArray[x].name + ": " + charAge1);
+        // console.log(character.name + ": " + charAge2);
+        // console.log("can date");
+      }
+      if (Math.abs(characterArray[x].age - character.age) <= 5){
+        relationArray.push("is childhood friends with");
+      }
+
+      if (characterArray[x].age - character.age >= 20){
+        if (characterArray[x].gender === "Female"){
+          var parent = "mother";
+          var uncle = "aunt";
+        } else if (characterArray[x].gender === "Male") {
+          var parent = "father";
+          var uncle = "uncle";
+        } else {
+          var parent = "parent";
+          var uncle = "uncle";
+        }
+        relationArray.push("is like a " + parent + " to", "is like an " + uncle + " to");
+      }
+
       var relNum = Math.floor(Math.random() * relationArray.length);
       if (character.species === "Trill" || character.species === "Klingon" || character.species === "Vulcan" || character.species === "Freed Borg drone") {
         var relationships = " " + relationArray[relNum] + " " + rankArray2[charIndex] + " " +  character.name;
@@ -725,7 +776,8 @@ $('#science-button').click(function(){
   $("#security-officer .relationships").text(relGen(3, characterArray));
   $("#doctor .relationships").text(relGen(4, characterArray));
   $("#engineer .relationships").text(relGen(5, characterArray));
-  $("#counselor .relationships").text(relGen(6, characterArray))});
+  $("#counselor .relationships").text(relGen(6, characterArray))
+});
 
 $('#security-button').click(function(){
   species = specGen();
@@ -741,8 +793,6 @@ $('#security-button').click(function(){
   eye = eyeGen();
   var securityOfficer = new Character(name, surname, gender, age,species, pers);
   characterArray[3] = securityOfficer;
-  relationship = relGen(3, characterArray);
-  $("#security-officer .name").text(name + surname);
   $("#security-officer .species").text(species);
   $("#security-officer .gender").text(gender);
   $("#security-officer .age").text(age);
@@ -751,8 +801,13 @@ $('#security-button').click(function(){
   $("#security-officer .skin").text(skin);
   $("#security-officer .hair").text(hair);
   $("#security-officer .eye").text(eye);
-  $("#security-officer .relationships").text(relationship);
-});
+  $("#captain .relationships").text(relGen(0, characterArray));
+  $("#first-officer .relationships").text(relGen(1, characterArray));
+  $("#science-officer .relationships").text(relGen(2, characterArray));
+  $("#security-officer .relationships").text(relGen(3, characterArray));
+  $("#doctor .relationships").text(relGen(4, characterArray));
+  $("#engineer .relationships").text(relGen(5, characterArray));
+  $("#counselor .relationships").text(relGen(6, characterArray))});
 
 $('#doc-button').click(function(){
   species = specGen();
